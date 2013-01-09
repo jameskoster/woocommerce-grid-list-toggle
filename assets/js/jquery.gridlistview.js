@@ -25,6 +25,10 @@ jQuery(document).ready(function(){
 	if (jQuery.cookie('gridcookie')) {
         jQuery('ul.products, #gridlist-toggle').addClass(jQuery.cookie('gridcookie'));
     }
+
+    if (jQuery.cookie('gridcookie') == null) {
+    	jQuery('ul.products').addClass('grid');
+    }
     
     if (jQuery.cookie('gridcookie') == 'grid') {
         jQuery('#gridlist-toggle #grid').addClass('active');
