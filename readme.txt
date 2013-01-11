@@ -3,7 +3,7 @@ Contributors: jameskoster
 Tags: woocommerce, grid, list, products, ecommerce
 Requires at least: 3.3
 Tested up to: 3.5
-Stable tag: 0.2
+Stable tag: 0.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,12 +40,15 @@ Thanks! Please fork the repo on <a href="https://github.com/jameskoster/woocomme
 
 == Changelog ==
 
-= 0.2 - 09/01/2012 =
+= 0.2.1 - 10/01/2013 =
+* Add active class to grid button on initial load 
+
+= 0.2 - 09/01/2013 =
 * Delayed gridlist_toggle_button() priority for better WooCommerce 2.0 compatibility 
 * Even stricter CSS for list view (improves theme compatibility)
 * Changed #gridlist-toggle to .gridlist-toggle
 
-= 0.1.1 - 08/01/2012 =
+= 0.1.1 - 08/01/2013 =
 * Set grid as default view
 * Stricter CSS for list view
 * Only add the excerpt on shop / product category pages
