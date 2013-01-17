@@ -3,7 +3,7 @@ Contributors: jameskoster
 Tags: woocommerce, grid, list, products, ecommerce
 Requires at least: 3.3
 Tested up to: 3.5
-Stable tag: 0.2.1
+Stable tag: 0.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,11 +34,38 @@ You may see varied results depending on how the theme has been built and whether
 = I found and fixed a bug how can I help? =
 Thanks! Please fork the repo on <a href="https://github.com/jameskoster/woocommerce-grid-list-toggle">github</a>, push your fix then send a pull request.
 
+= I don't like the button styles, how can I remove them and start fresh? =
+Add the following code to the functions.php file in your theme / child theme:
+
+`
+add_action('get_header', 'remove_gridlist_styles', 30);
+function remove_gridlist_styles() {
+	wp_dequeue_style( 'grid-list-button' );
+}
+`
+
+That will remove the button styles but keep the layout styles which will allow you to design the buttons as you see fit. 
+
+To remove the layout styles as well use:
+
+`
+add_action('get_header', 'remove_gridlist_styles', 30);
+function remove_gridlist_styles() {
+	wp_dequeue_style( 'grid-list-button' );
+	wp_dequeue_style( 'grid-list-layout' );
+}
+`
+
 == Screenshots ==
 
 1. Example of products laid out in list view in Twenty Eleven
 
 == Changelog ==
+
+= 0.2.2 - 16/01/2013 =
+* Re-applied button style. See FAQ to remove
+* YUI compressed CSS
+* Styles loaded on product tag archives
 
 = 0.2.1 - 10/01/2013 =
 * Add active class to grid button on initial load 
