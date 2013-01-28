@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Grid / List toggle
 Plugin URI: http://jameskoster.co.uk/tag/grid-list-toggle/
 Description: Adds a grid/list view toggle to product archives
-Version: 0.2.2
+Version: 0.2.3
 Author: jameskoster
 Author URI: http://jameskoster.co.uk
 Requires at least: 3.1
@@ -21,19 +21,19 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 	 * Localisation
 	 **/
 	load_plugin_textdomain('wc_list_grid_toggle', false, dirname( plugin_basename( __FILE__ ) ) . '/');
-	
+
 	/**
 	 * WC_List_Grid class
 	 **/
 	if (!class_exists('WC_List_Grid')) {
-	 
+
 		class WC_List_Grid {
-		
-			public function __construct() { 
+
+			public function __construct() {
 				// Hooks
   				add_action( 'wp' , array(&$this, 'setup_gridlist' ) , 20);
 			}
-			
+
 			// Functions
 			// Setup
 			function setup_gridlist() {
@@ -46,7 +46,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 					add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_single_excerpt', 5);
 				}
 			}
-			
+
 			// Scripts & styles
 			function setup_scripts_styles() {
 				if ( is_shop() || is_product_category() || is_product_tag() ) {
@@ -56,7 +56,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 					wp_enqueue_style( 'grid-list-button', plugins_url( '/assets/css/button.css', __FILE__ ) );
 				}
 			}
-			
+
 			// Toggle button
 			function gridlist_toggle_button() {
 				?>
@@ -65,7 +65,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 					</nav>
 				<?php
 			}
-			
+
 			// Button wrap
 			function gridlist_buttonwrap_open() {
 				?>
@@ -77,14 +77,14 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 					</div>
 				<?php
 			}
-			
+
 			// hr
 			function gridlist_hr() {
 				?>
 					<hr />
 				<?php
 			}
-		}		
+		}
 		$WC_List_Grid = new WC_List_Grid();
 	}
 }

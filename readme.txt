@@ -3,7 +3,7 @@ Contributors: jameskoster
 Tags: woocommerce, grid, list, products, ecommerce
 Requires at least: 3.3
 Tested up to: 3.5
-Stable tag: 0.2.2
+Stable tag: 0.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,7 +44,7 @@ function remove_gridlist_styles() {
 }
 `
 
-That will remove the button styles but keep the layout styles which will allow you to design the buttons as you see fit. 
+That will remove the button styles but keep the layout styles which will allow you to design the buttons as you see fit.
 
 To remove the layout styles as well use:
 
@@ -62,16 +62,20 @@ function remove_gridlist_styles() {
 
 == Changelog ==
 
+= 0.2.3 - 28/01/2013 =
+* Fixed active class bug on the toggle button
+* Styled the star-rating in list view
+
 = 0.2.2 - 16/01/2013 =
 * Re-applied button style. See FAQ to remove
 * YUI compressed CSS
 * Styles loaded on product tag archives
 
 = 0.2.1 - 10/01/2013 =
-* Add active class to grid button on initial load 
+* Add active class to grid button on initial load
 
 = 0.2 - 09/01/2013 =
-* Delayed gridlist_toggle_button() priority for better WooCommerce 2.0 compatibility 
+* Delayed gridlist_toggle_button() priority for better WooCommerce 2.0 compatibility
 * Even stricter CSS for list view (improves theme compatibility)
 * Changed #gridlist-toggle to .gridlist-toggle
 
