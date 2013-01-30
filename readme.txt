@@ -3,7 +3,7 @@ Contributors: jameskoster
 Tags: woocommerce, grid, list, products, ecommerce
 Requires at least: 3.3
 Tested up to: 3.5
-Stable tag: 0.2.3
+Stable tag: 0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,6 +16,8 @@ WooCommerce Grid / List toggle is a simple plugin which adds a Grid / List toggl
 The list view arranges products in a vertical list and pulls in the excerpt to give a more detailed overview.
 
 The grid view you will be familiar with as this is WooCommerce's default layout for product archives.
+
+The store owner can choose whether grid or list view be set as the default.
 
 Please feel free to contribute on <a href="https://github.com/jameskoster/woocommerce-grid-list-toggle">github</a>.
 
@@ -61,6 +63,9 @@ function remove_gridlist_styles() {
 1. Example of products laid out in list view in Twenty Eleven
 
 == Changelog ==
+
+= 0.3 - 30/01/2013 =
+* Added option to choose default view
 
 = 0.2.3 - 28/01/2013 =
 * Fixed active class bug on the toggle button
