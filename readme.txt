@@ -40,7 +40,7 @@ Thanks! Please fork the repo on <a href="https://github.com/jameskoster/woocomme
 Add the following code to the functions.php file in your theme / child theme:
 
 `
-add_action('get_header', 'remove_gridlist_styles', 30);
+add_action( 'wp_enqueue_scripts', 'remove_gridlist_styles', 30 );
 function remove_gridlist_styles() {
 	wp_dequeue_style( 'grid-list-button' );
 }
