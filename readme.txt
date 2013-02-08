@@ -51,7 +51,7 @@ That will remove the button styles but keep the layout styles which will allow y
 To remove the layout styles as well use:
 
 `
-add_action('get_header', 'remove_gridlist_styles', 30);
+add_action('wp_enqueue_scripts', 'remove_gridlist_styles', 30);
 function remove_gridlist_styles() {
 	wp_dequeue_style( 'grid-list-button' );
 	wp_dequeue_style( 'grid-list-layout' );
