@@ -3,7 +3,7 @@ Contributors: jameskoster
 Tags: woocommerce, grid, list, products, ecommerce
 Requires at least: 3.3
 Tested up to: 3.5
-Stable tag: 0.3
+Stable tag: 0.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,6 +63,12 @@ function remove_gridlist_styles() {
 1. Example of products laid out in list view in Twenty Eleven
 
 == Changelog ==
+
+= 0.3.2 - 08/02/2013 =
+* Product category descriptions now displayed in list view
+
+= 0.3.1 - 07/02/2013 =
+* Removed unnecessary default options
 
 = 0.3 - 30/01/2013 =
 * Added option to choose default view
