@@ -10,6 +10,8 @@ Requires at least: 3.1
 Tested up to: 3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wc_list_grid_toggle
+Domain Path: /languages/
 */
 
 /**
@@ -20,7 +22,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 	/**
 	 * Localisation
 	 **/
-	load_plugin_textdomain('wc_list_grid_toggle', false, dirname( plugin_basename( __FILE__ ) ) . '/');
+	load_plugin_textdomain( 'wc_list_grid_toggle', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 	/**
 	 * WC_List_Grid class
