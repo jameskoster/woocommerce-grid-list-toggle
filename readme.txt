@@ -11,13 +11,13 @@ Adds a grid/list view toggle to product archives
 
 == Description ==
 
-WooCommerce Grid / List toggle is a simple plugin which adds a Grid / List toggle to your product archives allowing users to, you guessed it, toggle between grid / list views of your products.
+WooCommerce Grid / List toggle is a simple plugin which adds a Grid / List toggle button to your product archives allowing users to,  toggle between grid / list views of your products on your WooCommerce store.
 
 The list view arranges products in a vertical list and pulls in the excerpt to give a more detailed overview.
 
 The grid view you will be familiar with as this is WooCommerce's default layout for product archives.
 
-The store owner can choose whether grid or list view be set as the default.
+The store owner can choose whether grid or list view be set as the default via the Catalog tab of the WooCommerce settings screen.
 
 Please feel free to contribute on <a href="https://github.com/jameskoster/woocommerce-grid-list-toggle">github</a>.
 
@@ -25,7 +25,8 @@ Please feel free to contribute on <a href="https://github.com/jameskoster/woocom
 
 1. Upload `woocommerce-grid-list-toggle` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Done!
+3. Choose the default setting on the catalog tab of the WooCommerce settings screen
+4. Done!
 
 == Frequently Asked Questions ==
 
