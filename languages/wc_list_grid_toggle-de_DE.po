@@ -1,0 +1,94 @@
+# This German Language File: Copyright (C) 2013 by David Decker of deckerweb.de & genesisthemes.de
+# This file is distributed under the same license as the WooCommerce Grid / List Toogle Plugin package.
+#
+# Weitere deutsche Sprachdateien fuer WooCommerce und Extensions (Erweiterungen)
+# sowie fuer WordPress-Plugins und -Themes sind hier zu finden:
+# --> http://deckerweb.de/sprachdateien/
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Grid / List toggle v0.3.2\n"
+"Report-Msgid-Bugs-To: http://deckerweb.de/kontakt/\n"
+"POT-Creation-Date: 2013-03-27 21:36:20+0000\n"
+"PO-Revision-Date: 2013-03-27 22:40+0100\n"
+"Last-Translator: David Decker <deckerweb.mobil@googlemail.com>\n"
+"Language-Team: DECKERWEB -- http://deckerweb.de/kontakt/\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#@ wc_list_grid_toggle
+#: grid-list-toggle.php:41
+#: grid-list-toggle.php:46
+msgid "Default catalog view"
+msgstr "Standard-Katalogansicht"
+
+#@ wc_list_grid_toggle
+#: grid-list-toggle.php:47
+msgid "Display products in grid or list view by default"
+msgstr "Produkte standardmäßig in Raster- oder Listenansicht darstellen"
+
+#@ wc_list_grid_toggle
+#: grid-list-toggle.php:51
+msgid "Grid"
+msgstr "Raster"
+
+#@ wc_list_grid_toggle
+#: grid-list-toggle.php:52
+msgid "List"
+msgstr "Liste"
+
+#@ wc_list_grid_toggle
+#: grid-list-toggle.php:111
+msgid "Grid view"
+msgstr "Rasteransicht"
+
+#@ wc_list_grid_toggle
+#: grid-list-toggle.php:111
+msgid "List view"
+msgstr "Listenansicht"
+
+#@ wc_list_grid_toggle
+#. translators: plugin header field 'Name'
+#: grid-list-toggle.php:0
+msgid "WooCommerce Grid / List toggle"
+msgstr "WooCommerce Raster / Listen Schalter"
+
+#@ wc_list_grid_toggle
+#. translators: plugin header field 'PluginURI'
+#: grid-list-toggle.php:0
+msgid "http://jameskoster.co.uk/tag/grid-list-toggle/"
+msgstr "http://jameskoster.co.uk/tag/grid-list-toggle/"
+
+#@ wc_list_grid_toggle
+#. translators: plugin header field 'Description'
+#: grid-list-toggle.php:0
+msgid "Adds a grid/list view toggle to product archives"
+msgstr "Fügt den Produktarchiv-Ansichten in WooCommerce einen Raster-/ Listen-Schalter hinzu."
+
+#@ wc_list_grid_toggle
+#. translators: plugin header field 'Author'
+#: grid-list-toggle.php:0
+msgid "jameskoster"
+msgstr "James Koster"
+
+#@ wc_list_grid_toggle
+#. translators: plugin header field 'AuthorURI'
+#: grid-list-toggle.php:0
+msgid "http://jameskoster.co.uk"
+msgstr "http://jameskoster.co.uk/"
+
+#@ wc_list_grid_toggle
+#. translators: plugin header field 'Version'
+#: grid-list-toggle.php:0
+msgid "0.3.2"
+msgstr "0.3.2"
+
