@@ -1,0 +1,58 @@
+# This file is distributed under the same license as the WooCommerce Grid / List Toggle package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2013-03-27 21:39:48+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: WooCommerce Grid / List Toggle\n"
+
+#: grid-list-toggle.php:41 grid-list-toggle.php:46
+msgid "Default catalog view"
+msgstr ""
+
+#: grid-list-toggle.php:47
+msgid "Display products in grid or list view by default"
+msgstr ""
+
+#: grid-list-toggle.php:51
+msgid "Grid"
+msgstr ""
+
+#: grid-list-toggle.php:52
+msgid "List"
+msgstr ""
+
+#: grid-list-toggle.php:111
+msgid "Grid view"
+msgstr ""
+
+#: grid-list-toggle.php:111
+msgid "List view"
+msgstr ""
+
+#: grid-list-toggle.php:0
+msgid "WooCommerce Grid / List toggle"
+msgstr ""
+
+#: grid-list-toggle.php:0
+msgid "http://jameskoster.co.uk/tag/grid-list-toggle/"
+msgstr ""
+
+#: grid-list-toggle.php:0
+msgid "Adds a grid/list view toggle to product archives"
+msgstr ""
+
+#: grid-list-toggle.php:0
+msgid "jameskoster"
+msgstr ""
+
+#: grid-list-toggle.php:0
+msgid "http://jameskoster.co.uk"
+msgstr ""
+
+#: grid-list-toggle.php:0
+msgid "0.3.2"
+msgstr ""
