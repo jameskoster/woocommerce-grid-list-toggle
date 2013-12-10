@@ -77,7 +77,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 			// Setup
 			function setup_gridlist() {
-				if ( is_shop() || is_product_category() || is_product_tag() ) {
+				if ( is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy() ) {
 					add_action( 'wp_enqueue_scripts', array( $this, 'setup_scripts_styles' ), 20);
 					add_action( 'wp_enqueue_scripts', array( $this, 'setup_scripts_script' ), 20);
 					add_action( 'woocommerce_before_shop_loop', array( $this, 'gridlist_toggle_button' ), 30);
@@ -91,13 +91,13 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 			// Scripts & styles
 			function setup_scripts_styles() {
-				if ( is_shop() || is_product_category() || is_product_tag() ) {
+				if ( is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy() ) {
 					wp_enqueue_style( 'grid-list-layout', plugins_url( '/assets/css/style.css', __FILE__ ) );
 					wp_enqueue_style( 'grid-list-button', plugins_url( '/assets/css/button.css', __FILE__ ) );
 				}
 			}
 			function setup_scripts_script() {
-				if ( is_shop() || is_product_category() || is_product_tag() ) {
+				if ( is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy() ) {
 					wp_enqueue_script( 'cookie', plugins_url( '/assets/js/jquery.cookie.min.js', __FILE__ ), array( 'jquery' ) );
 					wp_enqueue_script( 'grid-list-scripts', plugins_url( '/assets/js/jquery.gridlistview.min.js', __FILE__ ), array( 'jquery' ) );
 					add_action( 'wp_footer', array(&$this, 'gridlist_set_default_view') );
