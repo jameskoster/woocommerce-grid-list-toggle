@@ -2,8 +2,8 @@
 Contributors: jameskoster
 Tags: woocommerce, grid, list, products, ecommerce
 Requires at least: 3.3
-Tested up to: 3.8
-Stable tag: 0.3.4
+Tested up to: 3.8.1
+Stable tag: 0.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,6 +64,9 @@ function remove_gridlist_styles() {
 1. Example of products laid out in list view in Twenty Eleven
 
 == Changelog ==
+
+= 0.4.0 - 04/02/2013 =
+* WooCommerce 2.1 compatibility.
 
 = 0.3.4 - 10/12/2013 =
 * Grid list toggle now appears on custom product taxonomies. Kudos dariodev.
