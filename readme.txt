@@ -1,9 +1,9 @@
 === WooCommerce Grid / List toggle ===
 Contributors: jameskoster
 Tags: woocommerce, grid, list, products, ecommerce
-Requires at least: 3.3
-Tested up to: 3.8.1
-Stable tag: 0.4.0
+Requires at least: 4.0
+Tested up to: 4.2
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,7 @@ Adds a grid/list view toggle to product archives
 
 == Description ==
 
-WooCommerce Grid / List toggle is a simple plugin which adds a Grid / List toggle button to your product archives allowing users to,  toggle between grid / list views of your products on your WooCommerce store.
+WooCommerce Grid / List toggle is a simple plugin which adds a grid / list toggle button to your product archives allowing users to toggle between grid / list views of your products on your WooCommerce store.
 
 The list view arranges products in a vertical list and pulls in the excerpt to give a more detailed overview.
 
@@ -61,9 +61,14 @@ function remove_gridlist_styles() {
 
 == Screenshots ==
 
-1. Example of products laid out in list view in Twenty Eleven
+1. List view.
 
 == Changelog ==
+
+= 1.0.0 - 19/06/2015 =
+* Revamped button styles.
+* Updated textdomain to 'woocommerce-grid-list-toggle'.
+* Code tidy up.
 
 = 0.4.0 - 04/02/2013 =
 * WooCommerce 2.1 compatibility.

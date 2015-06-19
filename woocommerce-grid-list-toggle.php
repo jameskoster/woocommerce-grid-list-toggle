@@ -3,14 +3,14 @@
 Plugin Name: WooCommerce Grid / List toggle
 Plugin URI: http://jameskoster.co.uk/tag/grid-list-toggle/
 Description: Adds a grid/list view toggle to product archives
-Version: 0.4.0
+Version: 1.0.0
 Author: jameskoster
 Author URI: http://jameskoster.co.uk
-Requires at least: 3.3
-Tested up to: 3.8.1
+Requires at least: 4.0
+Tested up to: 4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: wc_list_grid_toggle
+Text Domain: woocommerce-grid-list-toggle
 Domain Path: /languages/
 */
 
@@ -22,12 +22,12 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 	/**
 	 * Localisation
 	 **/
-	load_plugin_textdomain( 'wc_list_grid_toggle', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	load_plugin_textdomain( 'woocommerce-grid-list-toggle', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 	/**
 	 * WC_List_Grid class
 	 **/
-	if (!class_exists('WC_List_Grid')) {
+	if ( ! class_exists( 'WC_List_Grid' ) ) {
 
 		class WC_List_Grid {
 
@@ -38,18 +38,18 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
   				// Init settings
 				$this->settings = array(
 					array(
-						'name' => __( 'Default catalog view', 'wc_list_grid_toggle' ),
-						'type' => 'title',
-						'id' => 'wc_glt_options'
+						'name' 	=> __( 'Default catalog view', 'woocommerce-grid-list-toggle' ),
+						'type' 	=> 'title',
+						'id' 	=> 'wc_glt_options'
 					),
 					array(
-						'name' 		=> __( 'Default catalog view', 'wc_list_grid_toggle' ),
-						'desc_tip' 	=> __( 'Display products in grid or list view by default', 'wc_list_grid_toggle' ),
+						'name' 		=> __( 'Default catalog view', 'woocommerce-grid-list-toggle' ),
+						'desc_tip' 	=> __( 'Display products in grid or list view by default', 'woocommerce-grid-list-toggle' ),
 						'id' 		=> 'wc_glt_default',
 						'type' 		=> 'select',
 						'options' 	=> array(
-							'grid'  => __('Grid', 'wc_list_grid_toggle'),
-							'list' 	=> __('List', 'wc_list_grid_toggle')
+							'grid'  => __( 'Grid', 'woocommerce-grid-list-toggle' ),
+							'list' 	=> __( 'List', 'woocommerce-grid-list-toggle' )
 						)
 					),
 					array( 'type' => 'sectionend', 'id' => 'wc_glt_options' ),
@@ -92,24 +92,22 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 			// Scripts & styles
 			function setup_scripts_styles() {
-				if ( is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy() ) {
-					wp_enqueue_style( 'grid-list-layout', plugins_url( '/assets/css/style.css', __FILE__ ) );
-					wp_enqueue_style( 'grid-list-button', plugins_url( '/assets/css/button.css', __FILE__ ) );
-				}
+				wp_enqueue_style( 'grid-list-layout', plugins_url( '/assets/css/style.css', __FILE__ ) );
+				wp_enqueue_style( 'grid-list-button', plugins_url( '/assets/css/button.css', __FILE__ ) );
+				wp_enqueue_style( 'dashicons' );
 			}
+
 			function setup_scripts_script() {
-				if ( is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy() ) {
-					wp_enqueue_script( 'cookie', plugins_url( '/assets/js/jquery.cookie.min.js', __FILE__ ), array( 'jquery' ) );
-					wp_enqueue_script( 'grid-list-scripts', plugins_url( '/assets/js/jquery.gridlistview.min.js', __FILE__ ), array( 'jquery' ) );
-					add_action( 'wp_footer', array(&$this, 'gridlist_set_default_view') );
-				}
+				wp_enqueue_script( 'cookie', plugins_url( '/assets/js/jquery.cookie.min.js', __FILE__ ), array( 'jquery' ) );
+				wp_enqueue_script( 'grid-list-scripts', plugins_url( '/assets/js/jquery.gridlistview.min.js', __FILE__ ), array( 'jquery' ) );
+				add_action( 'wp_footer', array( $this, 'gridlist_set_default_view' ) );
 			}
 
 			// Toggle button
 			function gridlist_toggle_button() {
 				?>
 					<nav class="gridlist-toggle">
-						<a href="#" id="grid" title="<?php _e('Grid view', 'wc_list_grid_toggle'); ?>">&#8862; <span><?php _e('Grid view', 'wc_list_grid_toggle'); ?></span></a><a href="#" id="list" title="<?php _e('List view', 'wc_list_grid_toggle'); ?>">&#8863; <span><?php _e('List view', 'wc_list_grid_toggle'); ?></span></a>
+						<a href="#" id="grid" title="<?php _e('Grid view', 'woocommerce-grid-list-toggle'); ?>"><span class="dashicons dashicons-grid-view"></span> <em><?php _e( 'Grid view', 'woocommerce-grid-list-toggle' ); ?></em></a><a href="#" id="list" title="<?php _e('List view', 'woocommerce-grid-list-toggle'); ?>"><span class="dashicons dashicons-exerpt-view"></span> <em><?php _e( 'List view', 'woocommerce-grid-list-toggle' ); ?></em></a>
 					</nav>
 				<?php
 			}
@@ -137,9 +135,9 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 				$default = get_option( 'wc_glt_default' );
 				?>
 					<script>
-						if (jQuery.cookie('gridcookie') == null) {
-					    	jQuery('ul.products').addClass('<?php echo $default; ?>');
-					    	jQuery('.gridlist-toggle #<?php echo $default; ?>').addClass('active');
+						if (jQuery.cookie( 'gridcookie' ) == null) {
+					    	jQuery( 'ul.products' ).addClass( '<?php echo $default; ?>' );
+					    	jQuery( '.gridlist-toggle #<?php echo $default; ?>' ).addClass( 'active' );
 					    }
 					</script>
 				<?php
@@ -153,6 +151,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 			}
 		}
+
 		$WC_List_Grid = new WC_List_Grid();
 	}
 }
