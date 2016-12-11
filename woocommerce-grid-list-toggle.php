@@ -105,30 +105,26 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 			// Toggle button
 			function gridlist_toggle_button() {
-				?>
-					<nav class="gridlist-toggle">
-						<a href="#" id="grid" title="<?php _e('Grid view', 'woocommerce-grid-list-toggle'); ?>"><span class="dashicons dashicons-grid-view"></span> <em><?php _e( 'Grid view', 'woocommerce-grid-list-toggle' ); ?></em></a><a href="#" id="list" title="<?php _e('List view', 'woocommerce-grid-list-toggle'); ?>"><span class="dashicons dashicons-exerpt-view"></span> <em><?php _e( 'List view', 'woocommerce-grid-list-toggle' ); ?></em></a>
-					</nav>
-				<?php
+				
+				$grid_view = __( 'Grid view', 'woocommerce-grid-list-toggle' );
+				$list_view = __( 'List view', 'woocommerce-grid-list-toggle' );
+				
+				$output = sprintf( '<nav class="gridlist-toggle"><a href="#" id="grid" title="%1$s"><span class="dashicons dashicons-grid-view"></span> <em>%1$s</em></a><a href="#" id="list" title="%2$s"><span class="dashicons dashicons-exerpt-view"></span> <em>%2$s</em></a></nav>', $grid_view, $list_view );
+					
+				echo apply_filters( 'gridlist_toggle_button_output', $output, $grid_view, $list_view );
 			}
 
 			// Button wrap
 			function gridlist_buttonwrap_open() {
-				?>
-					<div class="gridlist-buttonwrap">
-				<?php
+				echo apply_filters( 'gridlist_button_wrap_start', '<div class="gridlist-buttonwrap">' );
 			}
 			function gridlist_buttonwrap_close() {
-				?>
-					</div>
-				<?php
+				echo apply_filters( 'gridlist_button_wrap_end', '</div>' );
 			}
 
 			// hr
 			function gridlist_hr() {
-				?>
-					<hr />
-				<?php
+				echo apply_filters( 'gridlist_hr', '<hr />' );
 			}
 
 			function gridlist_set_default_view() {
@@ -145,9 +141,9 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 			function gridlist_cat_desc( $category ) {
 				global $woocommerce;
-				echo '<div itemprop="description">';
+				echo apply_filters( 'gridlist_cat_desc_wrap_start', '<div itemprop="description">' );
 					echo $category->description;
-				echo '</div>';
+				echo apply_filters( 'gridlist_cat_desc_wrap_end', '</div>' );
 
 			}
 		}
