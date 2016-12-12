@@ -2,8 +2,8 @@
 Contributors: jameskoster
 Tags: woocommerce, grid, list, products, ecommerce
 Requires at least: 4.0
-Tested up to: 4.6
-Stable tag: 1.0.0
+Tested up to: 4.7
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,6 +64,9 @@ function remove_gridlist_styles() {
 1. List view.
 
 == Changelog ==
+
+= 1.1.0 - 12/12/16 =
+* Outputs are now filterable. Kudos joshuadavidnelson.
 
 = 1.0.0 - 19/06/2015 =
 * Revamped button styles.

@@ -3,11 +3,11 @@
 Plugin Name: WooCommerce Grid / List toggle
 Plugin URI: http://jameskoster.co.uk/tag/grid-list-toggle/
 Description: Adds a grid/list view toggle to product archives
-Version: 1.0.0
+Version: 1.1.0
 Author: jameskoster
 Author URI: http://jameskoster.co.uk
 Requires at least: 4.0
-Tested up to: 4.6
+Tested up to: 4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: woocommerce-grid-list-toggle
@@ -105,12 +105,12 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 			// Toggle button
 			function gridlist_toggle_button() {
-				
+
 				$grid_view = __( 'Grid view', 'woocommerce-grid-list-toggle' );
 				$list_view = __( 'List view', 'woocommerce-grid-list-toggle' );
-				
+
 				$output = sprintf( '<nav class="gridlist-toggle"><a href="#" id="grid" title="%1$s"><span class="dashicons dashicons-grid-view"></span> <em>%1$s</em></a><a href="#" id="list" title="%2$s"><span class="dashicons dashicons-exerpt-view"></span> <em>%2$s</em></a></nav>', $grid_view, $list_view );
-					
+
 				echo apply_filters( 'gridlist_toggle_button_output', $output, $grid_view, $list_view );
 			}
 
