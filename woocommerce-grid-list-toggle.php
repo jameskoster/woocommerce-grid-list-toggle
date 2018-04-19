@@ -131,10 +131,14 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 				$default = get_option( 'wc_glt_default' );
 				?>
 					<script>
-						if (jQuery.cookie( 'gridcookie' ) == null) {
-					    	jQuery( 'ul.products' ).addClass( '<?php echo $default; ?>' );
-					    	jQuery( '.gridlist-toggle #<?php echo $default; ?>' ).addClass( 'active' );
-					    }
+					if ( 'function' == typeof(jQuery) ) {
+						jQuery(document).ready(function($) {
+							if ($.cookie( 'gridcookie' ) == null) {
+								$( 'ul.products' ).addClass( '<?php echo $default; ?>' );
+								$( '.gridlist-toggle #<?php echo $default; ?>' ).addClass( 'active' );
+							}
+						});
+					}
 					</script>
 				<?php
 			}
