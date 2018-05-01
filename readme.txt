@@ -2,8 +2,8 @@
 Contributors: jameskoster
 Tags: woocommerce, grid, list, products, ecommerce
 Requires at least: 4.0
-Tested up to: 4.7
-Stable tag: 1.1.0
+Tested up to: 4.9.5
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,7 +17,7 @@ The list view arranges products in a vertical list and pulls in the excerpt to g
 
 The grid view you will be familiar with as this is WooCommerce's default layout for product archives.
 
-The store owner can choose whether grid or list view be set as the default via the Catalog tab of the WooCommerce settings screen.
+The store owner can choose whether grid or list view be set as the default via the "WooCommerce" > "Product Catalog" section of the Customizer.
 
 Please feel free to contribute on <a href="https://github.com/jameskoster/woocommerce-grid-list-toggle">github</a>.
 
@@ -64,6 +64,11 @@ function remove_gridlist_styles() {
 1. List view.
 
 == Changelog ==
+
+= 1.2.0 - 01/05/18 =
+* Moved the settings to the Customizer (WooCommerce > Product Catalog)
+* Removed unnecessary .less files
+* Tweaked button styles
 
 = 1.1.0 - 12/12/16 =
 * Outputs are now filterable. Kudos joshuadavidnelson.

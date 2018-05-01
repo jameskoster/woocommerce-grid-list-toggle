@@ -1,13 +1,12 @@
 <?php
 /*
 Plugin Name: WooCommerce Grid / List toggle
-Plugin URI: http://jameskoster.co.uk/tag/grid-list-toggle/
 Description: Adds a grid/list view toggle to product archives
-Version: 1.1.0
+Version: 1.2.0
 Author: jameskoster
 Author URI: http://jameskoster.co.uk
 Requires at least: 4.0
-Tested up to: 4.7
+Tested up to: 4.9.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: woocommerce-grid-list-toggle
@@ -33,47 +32,64 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 			public function __construct() {
 				// Hooks
-  				add_action( 'wp' , array( $this, 'setup_gridlist' ) , 20);
+  			add_action( 'wp' , array( $this, 'setup_gridlist' ) , 20);
 
-  				// Init settings
-				$this->settings = array(
-					array(
-						'name' 	=> __( 'Default catalog view', 'woocommerce-grid-list-toggle' ),
-						'type' 	=> 'title',
-						'id' 	=> 'wc_glt_options'
-					),
-					array(
-						'name' 		=> __( 'Default catalog view', 'woocommerce-grid-list-toggle' ),
-						'desc_tip' 	=> __( 'Display products in grid or list view by default', 'woocommerce-grid-list-toggle' ),
-						'id' 		=> 'wc_glt_default',
-						'type' 		=> 'select',
-						'options' 	=> array(
-							'grid'  => __( 'Grid', 'woocommerce-grid-list-toggle' ),
-							'list' 	=> __( 'List', 'woocommerce-grid-list-toggle' )
-						)
-					),
-					array( 'type' => 'sectionend', 'id' => 'wc_glt_options' ),
-				);
 
-				// Default options
-				add_option( 'wc_glt_default', 'grid' );
+				// Delete old option
+				delete_option( 'wc_glt_default' );
 
-				// Admin
-				add_action( 'woocommerce_settings_image_options_after', array( $this, 'admin_settings' ), 20 );
-				add_action( 'woocommerce_update_options_catalog', array( $this, 'save_admin_settings' ) );
-				add_action( 'woocommerce_update_options_products', array( $this, 'save_admin_settings' ) );
+				/**
+				 * Setup Customizer
+				 */
+ 				add_action( 'customize_register', array( $this, 'wc_glt_customize' ), 10 );
 			}
 
 			/*-----------------------------------------------------------------------------------*/
 			/* Class Functions */
 			/*-----------------------------------------------------------------------------------*/
 
-			function admin_settings() {
-				woocommerce_admin_fields( $this->settings );
+			/**
+			 * Add the settings / controls
+			 * @param  array $wp_customize settings & controls
+			 * @return array               settings & controls
+			 */
+			public function wc_glt_customize( $wp_customize ) {
+				$wp_customize->add_setting(
+					'wc_glt_default_format',
+					array(
+						'default'           => 'grid',
+						'capability'        => 'manage_woocommerce',
+						'sanitize_callback' => array( $this, 'sanitize_grid_list_default' ),
+					)
+				);
+
+				$wp_customize->add_control(
+					'wc_glt_default_format',
+					array(
+						'label'       => __( 'Grid / List default', 'woocommerce-grid-list-toggle' ),
+						'description' => __( 'Choose which format products should display in by default.', 'woocommerce-grid-list-toggle' ),
+						'section'     => 'woocommerce_product_catalog',
+						'settings'    => 'wc_glt_default_format',
+						'type'        => 'select',
+						'priority'    => 20,
+						'choices'     => array(
+							'grid'          => __( 'Grid', 'woocommerce-grid-list-toggle' ),
+							'list'          => __( 'List', 'woocommerce-grid-list-toggle' ),
+						),
+					)
+				);
 			}
 
-			function save_admin_settings() {
-				woocommerce_update_options( $this->settings );
+			/**
+			 * Sanitize the grid/list default format.
+			 *
+			 * @param string $value 'grid', or 'list'.
+			 * @return string
+			 */
+			public function sanitize_grid_list_default( $value ) {
+				$options = array( 'grid', 'list' );
+
+				return in_array( $value, $options, true ) ? $value : '';
 			}
 
 			// Setup
@@ -84,7 +100,6 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 					add_action( 'woocommerce_before_shop_loop', array( $this, 'gridlist_toggle_button' ), 30);
 					add_action( 'woocommerce_after_shop_loop_item', array( $this, 'gridlist_buttonwrap_open' ), 9);
 					add_action( 'woocommerce_after_shop_loop_item', array( $this, 'gridlist_buttonwrap_close' ), 11);
-					add_action( 'woocommerce_after_shop_loop_item', array( $this, 'gridlist_hr' ), 30);
 					add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_single_excerpt', 5);
 					add_action( 'woocommerce_after_subcategory', array( $this, 'gridlist_cat_desc' ) );
 				}
@@ -122,13 +137,9 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 				echo apply_filters( 'gridlist_button_wrap_end', '</div>' );
 			}
 
-			// hr
-			function gridlist_hr() {
-				echo apply_filters( 'gridlist_hr', '<hr />' );
-			}
-
 			function gridlist_set_default_view() {
-				$default = get_option( 'wc_glt_default' );
+				$default = get_theme_mod( 'wc_glt_default_format', 'grid' );
+				var_dump( $default );
 				?>
 					<script>
 						if (jQuery.cookie( 'gridcookie' ) == null) {

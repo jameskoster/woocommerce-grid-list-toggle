@@ -30,6 +30,8 @@
 }
 .gridlist-toggle a.active {
   background-color: rgba(0, 0, 0, 0.2);
+  cursor: default;
+  color: inherit;
 }
 .gridlist-toggle .dashicons:before,
 .gridlist-toggle .dashicons {

@@ -1,4 +1,4 @@
-ul.products.grid div[itemprop="description"] {
+ul.products.grid .woocommerce-product-details__short-description {
   display: none;
 }
 ul.products.grid hr {
@@ -8,6 +8,9 @@ ul.products.list li.product {
   float: none !important;
   width: 100% !important;
   text-align: left !important;
+}
+ul.products.list li.product .woocommerce-loop-product__title {
+  clear: none;
 }
 ul.products.list li.product:after {
   content: "";
@@ -22,7 +25,7 @@ ul.products.list li.product img {
   margin-right: 3.8% !important;
 }
 ul.products.list li.product h3,
-ul.products.list li.product div[itemprop="description"],
+ul.products.list li.product .woocommerce-product-details__short-description,
 ul.products.list li.product .price,
 ul.products.list li.product .gridlist-buttonwrap {
   width: 65.4%;
