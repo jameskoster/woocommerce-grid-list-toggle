@@ -69,6 +69,7 @@ function remove_gridlist_styles() {
 * Moved the settings to the Customizer (WooCommerce > Product Catalog)
 * Removed unnecessary .less files
 * Tweaked button styles
+* Full compatibility with Storefront theme
 
 = 1.1.0 - 12/12/16 =
 * Outputs are now filterable. Kudos joshuadavidnelson.
