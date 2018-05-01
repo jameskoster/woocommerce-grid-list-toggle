@@ -9,7 +9,8 @@ ul.products.list li.product {
   width: 100% !important;
   text-align: left !important;
 }
-ul.products.list li.product .woocommerce-loop-product__title {
+ul.products.list li.product .woocommerce-loop-product__title,
+ul.products.list li.product .woocommerce-loop-category__title {
   clear: none;
 }
 ul.products.list li.product:after {
