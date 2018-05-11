@@ -3,7 +3,7 @@ Contributors: jameskoster
 Tags: woocommerce, grid, list, products, ecommerce
 Requires at least: 4.0
 Tested up to: 4.9.5
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,6 +64,9 @@ function remove_gridlist_styles() {
 1. List view.
 
 == Changelog ==
+
+= 1.2.1 - 11/05/18 =
+* Hide debug info.
 
 = 1.2.0 - 01/05/18 =
 * Moved the settings to the Customizer (WooCommerce > Product Catalog)

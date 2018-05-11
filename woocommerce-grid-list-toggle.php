@@ -2,7 +2,7 @@
 /*
 Plugin Name: WooCommerce Grid / List toggle
 Description: Adds a grid/list view toggle to product archives
-Version: 1.2.0
+Version: 1.2.1
 Author: jameskoster
 Author URI: http://jameskoster.co.uk
 Requires at least: 4.0
@@ -139,7 +139,6 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 			function gridlist_set_default_view() {
 				$default = get_theme_mod( 'wc_glt_default_format', 'grid' );
-				var_dump( $default );
 				?>
 					<script>
 					if ( 'function' == typeof(jQuery) ) {
