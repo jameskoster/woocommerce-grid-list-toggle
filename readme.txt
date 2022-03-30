@@ -1,9 +1,9 @@
 === WooCommerce Grid / List toggle ===
-Contributors: jameskoster
+Contributors: jameskoster, nicolaifriis
 Tags: woocommerce, grid, list, products, ecommerce
 Requires at least: 4.0
-Tested up to: 4.9.5
-Stable tag: 1.2.1
+Tested up to: 5.9.2
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,6 +64,9 @@ function remove_gridlist_styles() {
 1. List view.
 
 == Changelog ==
+
+= 1.3.0 - 30/03/22 =
+* Testet with WP Core 5.9.2.
 
 = 1.2.1 - 11/05/18 =
 * Hide debug info.
